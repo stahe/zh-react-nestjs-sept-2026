@@ -1,0 +1,990 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="React/NestJS 客户端/服务器示例">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-react-nestjs-sept-2026/%E7%AC%AC-4-%E7%AB%A0-react-%E7%AE%80%E4%BB%8B.html">
+      
+      
+        <link rel="prev" href="%E7%AC%AC-3-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-nestjs-%E6%9C%8D%E5%8A%A1%E5%99%A8.html">
+      
+      
+        <link rel="next" href="%E7%AC%AC-5-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-react-%E5%AE%A2%E6%88%B7%E7%AB%AF.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>5. 第 4 章 - [React] 简介 - React/NestJS 客户端/服务器示例</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "React/NestJS 客户端/服务器示例";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-第-4-章---react-简介" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="React/NestJS 客户端/服务器示例" class="md-header__button md-logo" aria-label="React/NestJS 客户端/服务器示例" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            React/NestJS 客户端/服务器示例
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. 第 4 章 - [React] 简介
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-react-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="React/NestJS 客户端/服务器示例" class="md-nav__button md-logo" aria-label="React/NestJS 客户端/服务器示例" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    React/NestJS 客户端/服务器示例
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-react-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-1-%E7%AB%A0-%E6%90%AD%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 第 1 章 - 搭建工作环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-2-%E7%AB%A0-nestjs-%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. 第 2 章 - [NestJS] 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-3-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-nestjs-%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 第 3 章 - [RdvMedecins] 应用的 [NestJS] 服务器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 第 4 章 - [React] 简介
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E7%AC%AC-4-%E7%AB%A0-react-%E7%AE%80%E4%BB%8B.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 第 4 章 - [React] 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-资料来源" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. 资料来源
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-从-angularjs-1x-到-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. 从 AngularJS 1.x 到 [React]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-react-应用的概念单页应用" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. [React] 应用的概念：“单页应用”
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-组件函数与-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. 组件：函数与 [JSX]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-本地状态usestate-和-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5. 本地状态：[useState] 和 props
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-没有模块每个文件本身就是自包含的" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6. 没有模块：每个文件本身就是自包含的
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-共享逻辑自定义-hook-和-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7. 共享逻辑：自定义 Hook 和 [Context]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-与服务器通信fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8. 与服务器通信：[fetch]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-条件渲染和列表纯-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9. 条件渲染和列表：纯 [JSX]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#510-小结angular---react-的对应关系" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.10. 小结：[Angular] -&gt; [React] 的对应关系
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-5-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-react-%E5%AE%A2%E6%88%B7%E7%AB%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. 第 5 章 - [RdvMedecins] 应用的 [React] 客户端
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-6-%E7%AB%A0-%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%90%8E%E7%BB%AD%E6%AD%A5%E9%AA%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 第 6 章 - 结论与后续步骤
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-4-introduction-a-react" name="chapitre-4-introduction-a-react" class="odt-bookmark-anchor"></span></p>
+<h1 id="5-第-4-章---react-简介">5. <span style="color: #2e74b5">第 4 章 - [React] 简介</span></h1>
+<p><span id="sources-2" name="sources-2" class="odt-bookmark-anchor"></span></p>
+<h2 id="51-资料来源">5.1. <span style="color: #2e74b5">资料来源</span></h2>
+<p>本章基于 <em><mark style="background-color: #fff5ce">[React]</mark></em> 的官方文档：react.dev。</p>
+<p><span id="dangularjs-1x-a-react" name="dangularjs-1x-a-react" class="odt-bookmark-anchor"></span></p>
+<h2 id="52-从-angularjs-1x-到-react">5.2. <span style="color: #2e74b5">从 AngularJS 1.x 到 [React]</span></h2>
+<p>原文档（2014）使用 AngularJS 1.x：这是一个 JavaScript 框架（当时还没有 TypeScript），围绕 $scope、控制器、指令（ng-repeat、ng-if……）以及基于“摘要循环”（$digest）和变量监视（$watch）的变更检测机制组织。</p>
+<p><em><mark style="background-color: #fff5ce">[React] </mark></em>（由 Meta 于 2013 年创建）不是像 AngularJS 1.x 或 [Angular] 那样的完整框架：它是一个 <strong>库</strong> ，专注于一项任务：用 <strong>组件</strong>构建界面。就其本身而言，它既不提供 HTTP 客户端，也不提供路由器，更没有依赖注入机制——因此本章的 <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> 客户端在这些方面依赖浏览器的原生 API（fetch()，见下文）和 <em><mark style="background-color: #fff5ce">[React]</mark></em> 特有的机制——<strong>上下文（Context）</strong>，而不是依赖 <em><mark style="background-color: #fff5ce">[HttpClient] </mark></em>或 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 路由器之类的专用模块。本章逐一介绍这些概念，并配以独立于案例研究的简短示例——下一章将在完整的 <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> 客户端中，在 <em><mark style="background-color: #fff5ce">[React]</mark></em> 19 里展示它们的实际运用。</p>
+<p><span id="le-principe-dune-application-react-le-single-page-application" name="le-principe-dune-application-react-le-single-page-application" class="odt-bookmark-anchor"></span></p>
+<h2 id="53-react-应用的概念单页应用">5.3. <span style="color: #2e74b5">[React] 应用的概念：“单页应用”</span></h2>
+<p>[React]<em><mark style="background-color: #fff5ce"> 应用</mark></em>与 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 应用一样，是单页应用（SPA）：服务器只向浏览器提供一个页面（HTML），其中包含一个封装了应用全部逻辑的文件（JavaScript）。该页面加载之后，就不会再有完整的页面重新加载：每次用户交互（切换视图、提交表单等）都由浏览器中已有的 JavaScript 代码处理，它更新显示，并通过异步 HTTP 请求（最常用的是 JSON）在后台与服务器通信。这已经是使用 AngularJS 1.x 的原文档的原则，也是本课程 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 变体的原则——它没有改变：不同变体之间只有管理显示的库不同。</p>
+<p><span id="les-composants-fonctions-et-jsx" name="les-composants-fonctions-et-jsx" class="odt-bookmark-anchor"></span></p>
+<h2 id="54-组件函数与-jsx">5.4. <span style="color: #2e74b5">组件：函数与 [JSX]</span></h2>
+<p>与 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 中一样，<strong>组件</strong> 是 <em><mark style="background-color: #fff5ce">[React]</mark></em> 应用的基本单元：它根据当前的状态和接收到的属性，生成要显示在屏幕上的内容。区别在于形式：<em><mark style="background-color: #fff5ce">[Angular]</mark></em> 组件是一个带装饰器的 <strong>类</strong>，与单独的（或内联的）HTML 模板相关联；<em><mark style="background-color: #fff5ce">[React]</mark></em> 组件则只是一个返回 <strong>JavaScript</strong> （或 TypeScript）<strong>函数</strong> ，返回的是 <em><mark style="background-color: #fff5ce">[JSX]</mark></em>——一种类似 HTML 的语法，但实际上会被编译器转换为普通的 JavaScript 函数调用。</p>
+<p>下面是一个非常小的组件，独立于案例研究，等价于本课程 <em><mark style="background-color: #fff5ce">[CounterComponent] </mark></em>在 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 变体中给出的示例：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// Counter.tsx</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react'</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Counter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">setValue</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">increment</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nx">setValue</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="o">&lt;&gt;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Value</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">increment</span><span class="p">}</span><span class="o">&gt;+</span><span class="mf">1</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">  </span><span class="p">);</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>我们来解读这段代码：</p>
+<ul>
+  <li>第 3 行：<b>import { useState } from &#x27;react&#x27;; </b>——<i><mark style="background-color: #fff5ce">[useState] </mark></i>是一个 <b>Hook </b><i><mark style="background-color: #fff5ce">[React]</mark></i>：一种特殊函数（可通过其“use”前缀识别），它使组件函数能够维护在多次渲染之间保持不变的状态——其作用可与 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面的信号或 $scope/AngularJS 控制器相比；
+  </li>
+  <li>第 5 行：<b>export function Counter() { </b>——<i><mark style="background-color: #fff5ce">[React]</mark></i> 组件是一个被导出的普通函数：既没有装饰器，也不需要声明自定义选择器（HTML）（不同于 <i><mark style="background-color: #fff5ce">[@Component]</mark></i>({ selector: … }) 在 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 中的做法）——它直接以自己的名称作为标签 &lt;Counter /&gt; 在父组件的 <i><mark style="background-color: #fff5ce">[JSX] </mark></i>中使用；
+  </li>
+  <li>第 6 行：<b>const [value, setValue] = useState(0); </b>——<i><mark style="background-color: #fff5ce">[useState]</mark></i>(0) 创建一个初始化为 0 的状态值，并返回一个 <b>数对</b>：当前值（value）和替换它的函数（setValue）。数组解构（<i><mark style="background-color: #fff5ce">[value, setValue]</mark></i>）只是一种命名约定——完全可以用不同的名称来命名这两个元素；
+  </li>
+  <li>第 8–10 行：<b>setValue((v) =&gt; v + 1); </b>——调用 setValue 不会就地修改 `value`（<i><mark style="background-color: #fff5ce">[React] </mark></i>的状态值是不可变的）：它指示 <i><mark style="background-color: #fff5ce">[React]</mark></i> 用根据旧值计算出的新值重新绘制组件，与 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面的 mySignal.update(v =&gt; …) 完全一样；
+  </li>
+  <li>第 13–16 行：<b>&lt;p&gt;Value: {value}&lt;/p&gt; </b>——函数返回的 <i><mark style="background-color: #fff5ce">[JSX] </mark></i>就是模板：花括号 { } 插入一个 JavaScript 表达式（这里是当前值）——作用与 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 模板中的双花括号 {{ value() }} 相同，只是没有调用括号：`value` 就是数据本身，而不是调用时才会被解释的信号。
+  </li>
+</ul>
+
+<p>&lt;&gt; … &lt;/&gt; 标签（“片段”）把多个元素组合在一起，而不会在它们外面添加多余的 HTML 节点——这是 <em><mark style="background-color: #fff5ce">[JSX]</mark></em> 的一个技术细节，它要求组件函数只返回一个根元素。</p>
+<p><span id="letat-local-usestate-et-les-props" name="letat-local-usestate-et-les-props" class="odt-bookmark-anchor"></span></p>
+<h2 id="55-本地状态usestate-和-props">5.5. <span style="color: #2e74b5">本地状态：[useState] 和 props</span></h2>
+<p>在 AngularJS 1.x 中，<em><mark style="background-color: #fff5ce">[Angular] </mark></em>通过系统性的检查循环（$digest）来检测数据值是否发生变化，在本课程的 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 变体中，它被 <strong>信号</strong> （signal()、computed()）取代。<em><mark style="background-color: #fff5ce">[React] </mark></em>采用第三种看起来更简单的方式：组件会完整地重新执行其函数（从而重新计算其整个 <em><mark style="background-color: #fff5ce">[JSX]</mark></em>），每当它的某个 <em><mark style="background-color: #fff5ce">[useState]</mark></em> 值发生变化时——<em><mark style="background-color: #fff5ce">[React] </mark></em>随后将结果与上一次渲染进行比较，只修改浏览器真实 DOM 中确实发生变化的部分（这种技术称为协调，或“虚拟 DOM”）。与信号不同，<em><mark style="background-color: #fff5ce">[useState]</mark></em> 状态本身并不“知道”什么依赖于它：由整个组件的重新渲染机制来处理，这在推理上更简单，但在非常大的应用中理论上开销略高，这是 <em><mark style="background-color: #fff5ce">[React]</mark></em> 有意做出的权衡。</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>函数</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>作用</b></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">useState</span><span class="p">(</span><span class="nx">initialValue</span><span class="p">)</span>
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">创建本地状态并返回数对 <i><mark style="background-color: #fff5ce">[value, setValue]；setValue</mark></i> 用新值重新绘制组件</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>setValue(newValue)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">用预先计算好的值替换状态值</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">setValue</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...)</span>
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">根据旧值计算新值（见上面的 increment()）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">useMemo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="p">[</span><span class="nx">deps</span><span class="p">])</span>
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">仅当 <i><mark style="background-color: #fff5ce">[deps] </mark></i>中的某个元素发生变化时，才重新计算派生值——在概念上等价于 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面的 computed()</div></td></tr></table>
+
+<p>有两种机制与 <em><mark style="background-color: #fff5ce">[useState] </mark></em>互补，使组件能够与其父组件通信——我们会在 <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> 客户端（下一章）中不断遇到它们，它们恰好位于 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 方面 input()/output() 所在的位置：</p>
+<ul>
+  <li><b>props</b>：<i><mark style="background-color: #fff5ce">[React]</mark></i> 组件以简单的函数参数（一个解构的对象，{ doctors, onSearch }）接收其输入——直接对应 input.required&lt;<i><mark style="background-color: #fff5ce">Doctor[]</mark></i>&gt;()（在 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面），在概念上也对应 AngularJS 1.x 指令的属性；
+  </li>
+  <li><b>回调 props</b>：由父组件提供的函数（onSearch: (criteria) =&gt; void），作为 prop 传入，然后由子组件在适当的时候调用——直接对应 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面的 output&lt;...&gt;()（及其 .emit(value) 方法），以及 AngularJS 1.x 的自定义事件（$emit）。
+  </li>
+</ul>
+
+<p><span id="pas-de-modules-chaque-fichier-est-deja-autonome" name="pas-de-modules-chaque-fichier-est-deja-autonome" class="odt-bookmark-anchor"></span></p>
+<h2 id="56-没有模块每个文件本身就是自包含的">5.6. <span style="color: #2e74b5">没有模块：每个文件本身就是自包含的</span></h2>
+<p>AngularJS 1.x 应用是围绕模块（angular.module(...)）组织的。<em><mark style="background-color: #fff5ce">[Angular] </mark></em>最初以更僵硬的形式（NgModule）采纳了这一思想，随后才提出把独立组件作为默认模式——本课程的 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 变体已经采用了这一简化。<em><mark style="background-color: #fff5ce">[React] </mark></em>从来不需要这个概念：.tsx 文件用 JavaScript 语言本身的 export 关键字导出组件，另一个文件用简单的 import 使用它——这就是标准的 ECMAScript 模块，没有任何界面库特有的额外层次：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">// Parent.tsx</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Counter</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./Counter'</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Parent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">  </span><span class="p">);</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>本课程在整个 <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> 客户端（下一章）中都采用这种风格：没有 *.module.ts 文件，没有需要随时保持更新的 <code>imports:</code> 装饰器 <em><mark style="background-color: #fff5ce">[...] </mark></em>——相比 AngularJS 1.x、带 NgModule 的 [Angular]，甚至 <em><mark style="background-color: #fff5ce">[Angular] </mark></em>的独立组件（它们仍然要在 <code>imports</code> 中列出其依赖：<em><mark style="background-color: #fff5ce">[...] </mark></em>来自装饰器 <em><mark style="background-color: #fff5ce">[@Component]</mark></em>），这又是进一步的简化。</p>
+<p><span id="partager-de-la-logique-hooks-personnalises-et-context" name="partager-de-la-logique-hooks-personnalises-et-context" class="odt-bookmark-anchor"></span></p>
+<h2 id="57-共享逻辑自定义-hook-和-context">5.7. <span style="color: #2e74b5">共享逻辑：自定义 Hook 和 [Context]</span></h2>
+<p>与 <em><mark style="background-color: #fff5ce">[NestJS] </mark></em>（第 2 章）中一样，客户端 <em><mark style="background-color: #fff5ce">[RdvMedecins] </mark></em>需要在多个组件之间共享逻辑：与服务器通信、识别已登录的用户，以及切换语言。<em><mark style="background-color: #fff5ce">[Angular] </mark></em>用可注入的 <strong>服务</strong> （<em><mark style="background-color: #fff5ce">[@Injectable]</mark></em>({ providedIn: &#x27;root&#x27; }) + inject(...)）来满足这一需求——它是 AngularJS 1.x 的 .service()/.factory() 的直接继承者。<em><mark style="background-color: #fff5ce">[React] </mark></em>没有内置的依赖注入机制；现代用法结合了上面已经讨论过的两种工具：</p>
+<ul>
+  <li>一个 <b>自定义 Hook</b>——名称以 `use` 开头的函数，它本身可以调用其他 Hook（<i><mark style="background-color: #fff5ce">[useState]</mark></i>、[useContext]……）——封装可复用的逻辑，就像 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面的服务方法一样；
+  </li>
+  <li><b>上下文（Context）</b>（<i><mark style="background-color: #fff5ce">[React.createContext]</mark></i>）把一个值（状态 + 函数）共享给整个组件子树，而无需逐级、逐个 prop 地手动向下传递——这相当于 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面 providedIn: &#x27;root&#x27; 所起的作用：单个实例，在任何需要的地方都可用。
+  </li>
+</ul>
+
+<p>下面是一个简短的示例，独立于案例研究，在概念上等价于本课程 <em><mark style="background-color: #fff5ce">[MyService] </mark></em>在 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 变体中给出的示例：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// my-context.tsx</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useContext</span><span class="p">,</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">ReactNode</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react'</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">MyContextValue</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">  </span><span class="nx">greet</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="p">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">MyContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="o">&lt;</span><span class="nx">MyContextValue</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">MyProvider</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">children</span><span class="o">:</span><span class="w"> </span><span class="kt">ReactNode</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">MyContextValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">greet</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">'Hello'</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">MyContext</span><span class="p">.</span><span class="nx">Provider</span><span class="w"> </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/MyContext.Provider&gt;;</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="p">}</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useMyContext</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">MyContextValue</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">MyContext</span><span class="p">);</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'useMyContext() must be called under a &lt;MyProvider&gt;'</span><span class="p">);</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">context</span><span class="p">;</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>我们来解读这段代码：</p>
+<ul>
+  <li>第 8 行：<b>const MyContext = createContext&lt;MyContextValue | null&gt;(null);</b> ——创建 Context 本身；`null` 是默认值，仅当树中其上方没有 `&lt;MyProvider&gt;` 时才会使用——这是一个在第 17 行检测到的编程错误；
+  </li>
+  <li>第 10–13 行：<b>&lt;MyContext.Provider value={value}&gt;{children}&lt;/MyContext.Provider&gt; </b>——Provider 组件使该值对其所有后代（{children}）可用；它只需在应用根部附近放置一次（见 <i><mark style="background-color: #fff5ce">[RdvMedecins]</mark></i> 客户端的 main.tsx，下一章）——相当于 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面 providedIn: &#x27;root&#x27; 所执行的隐式“注册”；
+  </li>
+  <li>第 15–21 行：<b>export function useMyContext(): MyContextValue { </b>——提供对 Context 值访问的自定义 Hook；组件调用的就是它（const my = useMyContext();），就像它们在 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面调用 inject(MyService) 一样。
+  </li>
+</ul>
+
+<p><span id="communiquer-avec-le-serveur-fetch" name="communiquer-avec-le-serveur-fetch" class="odt-bookmark-anchor"></span></p>
+<h2 id="58-与服务器通信fetch">5.8. <span style="color: #2e74b5">与服务器通信：[fetch]</span></h2>
+<p><em><mark style="background-color: #fff5ce">[HttpClient] </mark></em>（<em><mark style="background-color: #fff5ce">[Angular]</mark></em>）是原文档所用的 AngularJS 1.x 的 $http 服务的直接继承者。由于 <em><mark style="background-color: #fff5ce">[React] </mark></em>只是一个界面库，它不提供任何 HTTP 客户端：客户端 <em><mark style="background-color: #fff5ce">[RdvMedecins] </mark></em>直接使用 <em><mark style="background-color: #fff5ce">[fetch]</mark></em>，即浏览器的标准 API（无需任何额外依赖即可使用）：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">httpResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://localhost:8080/hello'</span><span class="p">);</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">httpResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>与 $http 和 <em><mark style="background-color: #fff5ce">[HttpClient]</mark></em> 的一个重要区别：<em><mark style="background-color: #fff5ce">[fetch] </mark></em>直接返回 Promise（JavaScript 的标准异步机制），而不是 Observable——没有 RxJS 库，没有 .subscribe({ next, error })，也没有 .pipe(map(...))。可以配合 .then(...) 使用，或者为了更好的可读性，配合 async/await 使用（如上所示，它会挂起函数的执行，直到 Promise 完成，而不会阻塞应用的其余部分）。网络错误或错误响应随后用简单的 try/catch 块处理，而不是用 RxJS 订阅的错误分支。</p>
+<p><em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> 客户端（下一章）的 useAppointmentService() Hook 系统地封装了 <em><mark style="background-color: #fff5ce">[fetch]</mark></em> 调用及随后的 .json()，原因届时会具体说明（所有服务器响应共有的 <em><mark style="background-color: #fff5ce">[ServerResponse]&lt;T&gt;</mark></em> 包装）。</p>
+<p><span id="le-rendu-conditionnel-et-les-listes-du-jsx-pur" name="le-rendu-conditionnel-et-les-listes-du-jsx-pur" class="odt-bookmark-anchor"></span></p>
+<h2 id="59-条件渲染和列表纯-jsx">5.9. <span style="color: #2e74b5">条件渲染和列表：纯 [JSX]</span></h2>
+<p>AngularJS 1.x 使用结构型指令（ng-if、ng-repeat）来有条件地显示元素，或为列表中的每个元素重复一个模板块。本课程的 <em><mark style="background-color: #fff5ce">[Angular]</mark></em> 变体使用内置语法 <em><mark style="background-color: #fff5ce">[@if]/[@for]</mark></em>。<em><mark style="background-color: #fff5ce">[React] </mark></em>没有需要另学的单独模板语法：组件返回的 <em><mark style="background-color: #fff5ce">[JSX] </mark></em>就是 JavaScript，流程控制用普通的 JavaScript 运算符来表达：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">{</span><span class="nx">loggedInUser</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Welcome</span><span class="o">!&lt;</span><span class="err">/p&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Please</span><span class="w"> </span><span class="nx">log</span><span class="w"> </span><span class="ow">in</span><span class="p">.</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">)}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">  </span><span class="p">{</span><span class="nx">itemList</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">li</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">  </span><span class="p">))}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="o">&lt;</span><span class="err">/ul&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>我们来解读这段代码：</p>
+<ul>
+  <li>第 1–5 行：<b>loggedInUser ? (...) : (...) </b>——JavaScript 的三元运算符取代了 <i><mark style="background-color: #fff5ce">[@if]/[@else]</mark></i>（<i><mark style="background-color: #fff5ce">[Angular]</mark></i>）和 ng-if（AngularJS 1.x）：由条件决定返回两个 <i><mark style="background-color: #fff5ce">[JSX] </mark></i>表达式中的哪一个。对于没有备选分支的条件，只需用 <b>&amp;&amp;</b> 运算符：{condition &amp;&amp; &lt;p&gt;...&lt;/p&gt;} 在条件为 false 时完全不显示任何内容（例如，下一章讨论的 <i><mark style="background-color: #fff5ce">[RdvMedecins]</mark></i> 客户端的 App 组件中的 ADMIN/USER 横幅就采用这种风格）；
+  </li>
+  <li>第 8 行：<b>itemList.map((item) =&gt; (...)) </b>——.map()（JavaScript 的标准数组方法）取代了 <i><mark style="background-color: #fff5ce">[@for]</mark></i>（<i><mark style="background-color: #fff5ce">[Angular]</mark></i>）和 ng-repeat（AngularJS 1.x）：它把数组的每个元素转换为一个 <i><mark style="background-color: #fff5ce">[JSX]</mark></i> 元素；
+  </li>
+  <li>第 9 行：<b>key={item.id} </b>（在 <i><mark style="background-color: #fff5ce">[JSX]</mark></i> 列表中是必需的）——告诉 <i><mark style="background-color: #fff5ce">[React] </mark></i>在重新绘制列表时如何识别已经显示过的元素；这与 <i><mark style="background-color: #fff5ce">[@for] </mark></i>之后的 track item.id 在 <i><mark style="background-color: #fff5ce">[Angular]</mark></i> 方面所起的作用完全相同。
+  </li>
+</ul>
+
+<p><span id="recapitulatif-correspondances-angular-react" name="recapitulatif-correspondances-angular-react" class="odt-bookmark-anchor"></span></p>
+<h2 id="510-小结angular---react-的对应关系">5.10. <span style="color: #2e74b5">小结：[Angular] -&gt; [React] 的对应关系</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><mark style="background-color: #fff5ce">[Angular] </mark></i><i><b>（本课程的上一版本）</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><mark style="background-color: #fff5ce">[React] </mark></i><i><b>（2026）</b></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Standalone components ([@Component])
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">函数组件</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Signals (signal(), input(), output(), computed())
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><mark style="background-color: #fff5ce">[useState]</mark></i>()、props、回调 props、<i><mark style="background-color: #fff5ce">[useMemo]</mark></i>()</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>effect()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><mark style="background-color: #fff5ce">[useEffect]</mark></i>()</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Separate template (.html) + decorator (.ts)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><mark style="background-color: #fff5ce">[JSX] </mark></i>嵌入在组件中（.tsx）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[@if], [@for]
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">三元运算符 / &amp;&amp;、.map()</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Injectable services ([@Injectable]({ providedIn: 'root' })) + inject()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">自定义 Hook + <i><mark style="background-color: #fff5ce">[Context]</mark></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>[HttpClient] (RxJS Observables)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><mark style="background-color: #fff5ce">[fetch] </mark></i>（原生 Promise）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>[@angular/router] (empty routing table)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">没有路由器（结论相同，且更进一步）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Angular CLI / [@angular/build]
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><mark style="background-color: #fff5ce">[Vite]</mark></i></div></td></tr></table>
+
+<p>有了这些概念，就足以着手学习下一章的 <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> 客户端：不过，每种新用法都会随着代码的推进，在其出现的确切位置重新加以解释。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本教程由 Anthropic 的 AI <strong>Claude</strong> 编写，并经 <strong>Serge Tahé</strong> 审阅，根据
+        <em>知识共享署名 – 禁止商业使用 –
+        共享 3.0 未本地化版</em>的条款向公众开放。
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

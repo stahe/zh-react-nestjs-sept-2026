@@ -1,0 +1,903 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="React/NestJS 客户端/服务器示例">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-react-nestjs-sept-2026/%E7%AC%AC-2-%E7%AB%A0-nestjs-%E7%AE%80%E4%BB%8B.html">
+      
+      
+        <link rel="prev" href="%E7%AC%AC-1-%E7%AB%A0-%E6%90%AD%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83.html">
+      
+      
+        <link rel="next" href="%E7%AC%AC-3-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-nestjs-%E6%9C%8D%E5%8A%A1%E5%99%A8.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>3. 第 2 章 - [NestJS] 简介 - React/NestJS 客户端/服务器示例</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "React/NestJS 客户端/服务器示例";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-第-2-章---nestjs-简介" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="React/NestJS 客户端/服务器示例" class="md-header__button md-logo" aria-label="React/NestJS 客户端/服务器示例" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            React/NestJS 客户端/服务器示例
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. 第 2 章 - [NestJS] 简介
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-react-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="React/NestJS 客户端/服务器示例" class="md-nav__button md-logo" aria-label="React/NestJS 客户端/服务器示例" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    React/NestJS 客户端/服务器示例
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-react-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-1-%E7%AB%A0-%E6%90%AD%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 第 1 章 - 搭建工作环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. 第 2 章 - [NestJS] 简介
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E7%AC%AC-2-%E7%AB%A0-nestjs-%E7%AE%80%E4%BB%8B.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. 第 2 章 - [NestJS] 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-资料来源" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. 资料来源
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-nestjs-在-web-应用中的角色" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. [NestJS] 在 Web 应用中的角色
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-nestjs-开发模型" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. [NestJS] 开发模型
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-第一个示例hello迷你项目" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. 第一个示例：“hello”迷你项目
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. 第一个示例：“hello”迷你项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-服务" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1. 服务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-控制器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2. 控制器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-模块" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3. 模块
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344-执行" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.4. 执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-提供者和依赖注入" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. 提供者和依赖注入
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-案例研究中还会出现的其他装饰器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. 案例研究中还会出现的其他装饰器
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-3-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-nestjs-%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 第 3 章 - [RdvMedecins] 应用的 [NestJS] 服务器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-4-%E7%AB%A0-react-%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 第 4 章 - [React] 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-5-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-react-%E5%AE%A2%E6%88%B7%E7%AB%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. 第 5 章 - [RdvMedecins] 应用的 [React] 客户端
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-6-%E7%AB%A0-%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%90%8E%E7%BB%AD%E6%AD%A5%E9%AA%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 第 6 章 - 结论与后续步骤
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-2-introduction-a-nestjs" name="chapitre-2-introduction-a-nestjs" class="odt-bookmark-anchor"></span></p>
+<h1 id="3-第-2-章---nestjs-简介">3. <span style="color: #2e74b5">第 2 章 - [NestJS] 简介</span></h1>
+<p><span id="sources" name="sources" class="odt-bookmark-anchor"></span></p>
+<h2 id="31-资料来源">3.1. <span style="color: #2e74b5">资料来源</span></h2>
+<p>本章参考了以下资料：</p>
+<ul>
+  <li>官方 <i><mark style="background-color: #fff5ce">[NestJS]</mark></i> 网站：<a href="https://nestjs.com/"><u><span style="color: #0563c1">nestjs.com</span></u></a> 及其文档 <a href="https://docs.nestjs.com/"><u><span style="color: #0563c1">docs.nestjs.com</span></u></a>；
+  </li>
+  <li>该框架的 GitHub 仓库：<a href="https://github.com/nestjs/nest"><u><span style="color: #0563c1">github.com/nestjs/nest</span></u></a>。
+  </li>
+</ul>
+
+<p><span id="la-place-de-nestjs-dans-une-application-web" name="la-place-de-nestjs-dans-une-application-web" class="odt-bookmark-anchor"></span></p>
+<h2 id="32-nestjs-在-web-应用中的角色">3.2. <span style="color: #2e74b5">[NestJS] 在 Web 应用中的角色</span></h2>
+<p><em><mark style="background-color: #fff5ce">[NestJS] </mark></em>是一个用 TypeScript 编写的 Node.js 框架，用于构建 Web 应用的服务器端——最常见的是 REST API（JSON）。它并不重新发明 HTTP 协议的处理：默认情况下，它依赖 Express，这是一个更为基础的 Node.js 框架，负责接收原始 HTTP 请求并作出响应。<em><mark style="background-color: #fff5ce">[NestJS] </mark></em>建立在此之上，提供了 Node.js 和 Express 本身都不强加的代码组织方式：划分为模块、控制器和服务；依赖注入；装饰器……</p>
+<p>它的架构深受 <em><mark style="background-color: #fff5ce">[Angular] </mark></em>启发（装饰器、模块、依赖注入）——阅读本课程 [Angular] 版本的读者会在客户端再次看到这种相似性。</p>
+<p><em><mark style="background-color: #fff5ce">[NestJS] </mark></em>主要设计用于生成 JSON 响应：默认情况下，控制器方法返回的任何内容都会自动转换为 JSON 并发送给客户端，无需任何特殊配置。</p>
+<p><span id="le-modele-de-developpement-de-nestjs" name="le-modele-de-developpement-de-nestjs" class="odt-bookmark-anchor"></span></p>
+<h2 id="33-nestjs-开发模型">3.3. <span style="color: #2e74b5">[NestJS] 开发模型</span></h2>
+<p>三个概念构成了 <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> 应用的结构：</p>
+<ul>
+  <li><b>模块 </b>（<mark style="background-color: #fff5ce">@[Module]</mark> 装饰器）：模块把一组相互关联的功能组织在一起——它声明属于自己的控制器和服务、所需的其他模块，以及向其他模块提供什么。<i><mark style="background-color: #fff5ce">[NestJS]</mark></i> 应用总是从根模块 <i><mark style="background-color: #fff5ce">[AppModule]</mark></i> 开始，它汇集项目中的所有其他模块；
+  </li>
+  <li><b>控制器 </b>（<mark style="background-color: #fff5ce">@[Controller]</mark> 装饰器）：控制器是应用的入口点——一个类，其中每个方法接收与特定 URL 对应的 HTTP 请求，并向客户端返回响应；
+  </li>
+  <li><b>提供者 </b>（装饰器 <mark style="background-color: #fff5ce">@[Injectable]</mark>）：提供者是一个普通的类，通常负责业务逻辑或数据访问，<i><mark style="background-color: #fff5ce">[NestJS] </mark></i>可以自动创建它，并将其提供（即“注入”）给任何需要它的控制器或服务。
+  </li>
+</ul>
+
+<p>在实践中，需要某个提供者的类只需在其构造函数中把它声明为参数——<em><mark style="background-color: #fff5ce">[NestJS] </mark></em>会创建所需的实例并自动传入，您无需自己写 <code>new</code>：这称为 <strong>基于构造函数的依赖注入</strong>，在 NestJS 中几乎总是使用这种做法。</p>
+<p><span id="un-premier-exemple-le-mini-projet-bonjour" name="un-premier-exemple-le-mini-projet-bonjour" class="odt-bookmark-anchor"></span></p>
+<h2 id="34-第一个示例hello迷你项目">3.4. <span style="color: #2e74b5">第一个示例：“hello”迷你项目</span></h2>
+<p>为了巩固这三个概念，下面是一个非常小的 <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> 项目，独立于案例研究（只有一个路由 /hello），您可以这样创建它（在 VSCode 中通过 <em><mark style="background-color: #fff5ce">[File/Open Folder]</mark></em> 打开一个空文件夹，在其中输入这些命令。这些命令会创建一个名为 <em><mark style="background-color: #fff5ce">[hello-nest]</mark></em> 的文件夹）：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>npm install -g [@nestjs/cli]
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>nest new hello-nest
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>cd hello-nest
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>npm run start:dev
+</code></pre></div></td></tr></table></div>
+<p><img src="images/10000000000002160000044D5E059E82.png" width="216" height="446" style="width:5.72cm;height:11.8cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002160000044D5E059E82.png" /></p>
+<p>该命令会生成一个包含以下关键文件的项目：<mark style="background-color: #fff5ce">[src/main.ts]</mark>、<mark style="background-color: #fff5ce">src/app.module.ts</mark>、<mark style="background-color: #fff5ce">src/app.controller.ts</mark>、<mark style="background-color: #fff5ce">src/app.service.ts</mark>。仅这四个文件就足以说明 <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> 应用的架构：一个入口点（<em><mark style="background-color: #fff5ce">[main.ts]</mark></em>）、一个根模块（app.module.ts）、一个控制器（app.controller.ts）和一个服务（app.service.ts）。</p>
+<p><span id="le-service" name="le-service" class="odt-bookmark-anchor"></span></p>
+<h3 id="341-服务">3.4.1. <span style="color: #1f4d78">服务</span></h3>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color: #8f08c4">// src/app.service.ts</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import { Injectable } from &#x27;@nestjs/common&#x27;;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">@Injectable()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">export class AppService {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  getHello(): string {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    return &#x27;Hello World!&#x27;;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>第 2 行：每个用到的元素都要显式导入；这里从 <mark style="background-color: #fff5ce">[Injectable]</mark> 导入 <mark style="background-color: #fff5ce">[@nestjs/common]</mark>，该模块包含 <i><mark style="background-color: #fff5ce">[NestJS]</mark></i> 的大部分装饰器和工具类；
+  </li>
+  <li>第 4 行：<b>装饰器 </b>是紧贴在 TypeScript 的类、方法或参数上方的注解（以 @ 符号开头），它在不改动其代码的情况下修改或增强其行为——几乎整个 NestJS 词汇体系都建立在这一机制之上。<mark style="background-color: #fff5ce">@[Injectable]</mark>() 将该类标记为 <b>提供者</b>：<i><mark style="background-color: #fff5ce">[NestJS] </mark></i>会自行创建它，并自动提供给在构造函数中请求它的任何其他类，无需自己写 new <i><mark style="background-color: #fff5ce">[AppService]</mark></i>()；
+  </li>
+  <li>第 6 行：<mark style="background-color: #fff5ce">: string </mark>声明返回类型——这是 TypeScript 特有的功能，JavaScript 中没有。
+  </li>
+</ul>
+
+<p><span id="le-controleur" name="le-controleur" class="odt-bookmark-anchor"></span></p>
+<h3 id="342-控制器">3.4.2. <span style="color: #1f4d78">控制器</span></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">// src/app.controller.ts</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Controller</span><span class="p">,</span><span class="w"> </span><span class="nx">Get</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@nestjs/common'</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AppService</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./app.service.js'</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">@Controller</span><span class="p">()</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppController</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">appService</span><span class="o">:</span><span class="w"> </span><span class="kt">AppService</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="kd">@Get</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">  </span><span class="nx">getHello</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">appService</span><span class="p">.</span><span class="nx">getHello</span><span class="p">();</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>第 5 行：<mark style="background-color: #fff5ce">@Controller</mark>() 装饰其后的类，使其成为控制器：NestJS 会把与其路由对应的 HTTP 请求发送给它。括号中的参数是可选的前缀，会添加到该类所有路由的开头——这里为空：因此“hello”路由直接响应 /hello；
+  </li>
+  <li>第 7 行：构造函数声明了一个类型为 <mark style="background-color: #fff5ce">appService </mark>的参数 <mark style="background-color: #fff5ce">[AppService]</mark>，前面带有 TypeScript 修饰符 private <mark style="background-color: #fff5ce">readonly</mark>，它用一行代码同时声明该参数并将其注册为实例的属性（`this.appService`）。<i><mark style="background-color: #fff5ce">[NestJS] </mark></i>判断出该控制器需要一个 <i><mark style="background-color: #fff5ce">[AppService]</mark></i>，创建它的一个实例（单一实例，由整个应用共享），并在此自动提供：这就是前面提到的基于构造函数的依赖注入；
+  </li>
+  <li>第 9 行：<mark style="background-color: #fff5ce">[@Get](&#x27;hello&#x27;) </mark>将其后的方法与路由 <mark style="background-color: #fff5ce">HTTP GET /hello</mark> 关联：服务器运行后，该装饰器使该动作可通过可测试的地址<mark style="background-color: #fff5ce"> http://localhost:3000/hello </mark>访问。其他装饰器对其他 HTTP 动词起相同作用：<mark style="background-color: #fff5ce">@[Post]</mark>()、<mark style="background-color: #fff5ce">@Put</mark>()、<mark style="background-color: #fff5ce">@Delete</mark>()、<mark style="background-color: #fff5ce">@Patch</mark>()（在案例研究中，我们会对 /addAppointment 和 /deleteAppointment 使用 <mark style="background-color: #fff5ce">@[Post]</mark>()）。请注意，第 10 行中的方法名 <i><mark style="background-color: #fff5ce">[getHello] </mark></i>无关紧要，可以是任何名称；
+  </li>
+  <li>第 11 行：控制器把工作委托给注入的服务，而不是自己编写响应：它仍然只是一个简单的路由层，业务逻辑则位于服务中——我们会在第 3 章的案例研究中以更大的规模看到这一原则。
+  </li>
+</ul>
+
+<p><span id="le-module" name="le-module" class="odt-bookmark-anchor"></span></p>
+<h3 id="343-模块">3.4.3. <span style="color: #1f4d78">模块</span></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">// src/app.module.ts</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Module</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@nestjs/common'</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AppController</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./app.controller.js'</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AppService</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./app.service.js'</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kd">@Module</span><span class="p">({</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">  </span><span class="nx">controllers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">AppController</span><span class="p">],</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">  </span><span class="nx">providers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">AppService</span><span class="p">],</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">})</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppModule</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>第 6 行：<mark style="background-color: #fff5ce">@[Module]</mark>({...}) 装饰其后的类，将其变成模块：它把应用中一个内聚的部分组合在一起，并在作为参数传入的对象中声明其组成。可以有四个属性：<mark style="background-color: #fff5ce">controllers </mark>（该模块公开的控制器）、<mark style="background-color: #fff5ce">providers </mark>（该模块提供的服务，可在模块内注入）、<mark style="background-color: #fff5ce">imports </mark>（该模块依赖的其他模块）和 <mark style="background-color: #fff5ce">exports </mark>（该模块向导入它的模块开放的提供者）；
+  </li>
+  <li>如果没有 `controllers: <i><mark style="background-color: #fff5ce">[AppController]</mark></i>` 这一行，`<i><mark style="background-color: #fff5ce">[NestJS]` </mark></i>会忽略该控制器，其路由不会响应任何请求；如果没有 `providers: <i><mark style="background-color: #fff5ce">[AppService]</mark></i>`，控制器的依赖注入会在启动时失败。
+  </li>
+</ul>
+
+<p><span id="execution" name="execution" class="odt-bookmark-anchor"></span></p>
+<h3 id="344-执行">3.4.4. <span style="color: #1f4d78">执行</span></h3>
+<p>在 VSCode 中，在 <em><mark style="background-color: #fff5ce">[hello-nest]</mark></em> 文件夹根目录下启动的终端中，输入以下命令：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm run start:dev
+</code></pre></div>
+<p>在浏览器中打开<mark style="background-color: #fff5ce"> http://localhost:3000/hello </mark>，会得到如下响应：</p>
+<p><img src="images/10000000000002880000014984146B6D.png" width="324" height="165" style="width:8.573cm;height:4.353cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002880000014984146B6D.png" /></p>
+<p><span id="les-providers-et-linjection-de-dependances" name="les-providers-et-linjection-de-dependances" class="odt-bookmark-anchor"></span></p>
+<h2 id="35-提供者和依赖注入">3.5. <span style="color: #2e74b5">提供者和依赖注入</span></h2>
+<p>用 <mark style="background-color: #fff5ce">@[Injectable]</mark>() 标注的类就是提供者：<em><mark style="background-color: #fff5ce">[NestJS] </mark></em>知道如何实例化它，并在任何构造函数请求它的地方自动注入，前提是它出现在模块的 providers 数组中。默认情况下，<em><mark style="background-color: #fff5ce">[NestJS]</mark></em> 提供者是 <strong>单例</strong>：应用启动时只创建一个实例，所有需要它的组件共享同一个实例——这一点对理解案例研究（第 3 章）中 <em><mark style="background-color: #fff5ce">[ApplicationModelService]</mark></em> 服务的作用很重要，该服务在服务器启动时缓存数据。</p>
+<p><span id="les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas" name="les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas" class="odt-bookmark-anchor"></span></p>
+<h2 id="36-案例研究中还会出现的其他装饰器">3.6. <span style="color: #2e74b5">案例研究中还会出现的其他装饰器</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>装饰器</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>作用</b></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[@Get](url), [@Post](url)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">将控制器方法与 HTTP 路由关联</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[@Param]('x')
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">从 URL 中获取可变片段，例如 /getDoctorById/:id</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[@Body]()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">获取 POST 请求的 JSON 请求体，并反序列化为一个类</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[@Injectable]()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">声明一个提供者（服务、DAO……）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[@Module]({...})
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">声明一个模块，即控制器和提供者的集合</div></td></tr></table>
+
+<p>这些装饰器会在它们于 <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> 服务器代码中出现的确切位置逐一详细讲解（第 3 章）。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本教程由 Anthropic 的 AI <strong>Claude</strong> 编写，并经 <strong>Serge Tahé</strong> 审阅，根据
+        <em>知识共享署名 – 禁止商业使用 –
+        共享 3.0 未本地化版</em>的条款向公众开放。
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,746 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="React/NestJS 客户端/服务器示例">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-react-nestjs-sept-2026/%E7%AC%AC-6-%E7%AB%A0-%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%90%8E%E7%BB%AD%E6%AD%A5%E9%AA%A4.html">
+      
+      
+        <link rel="prev" href="%E7%AC%AC-5-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-react-%E5%AE%A2%E6%88%B7%E7%AB%AF.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>7. 第 6 章 - 结论与后续步骤 - React/NestJS 客户端/服务器示例</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "React/NestJS 客户端/服务器示例";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-第-6-章---结论与后续步骤" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="React/NestJS 客户端/服务器示例" class="md-header__button md-logo" aria-label="React/NestJS 客户端/服务器示例" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            React/NestJS 客户端/服务器示例
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. 第 6 章 - 结论与后续步骤
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-react-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="React/NestJS 客户端/服务器示例" class="md-nav__button md-logo" aria-label="React/NestJS 客户端/服务器示例" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    React/NestJS 客户端/服务器示例
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-react-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-1-%E7%AB%A0-%E6%90%AD%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 第 1 章 - 搭建工作环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-2-%E7%AB%A0-nestjs-%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. 第 2 章 - [NestJS] 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-3-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-nestjs-%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 第 3 章 - [RdvMedecins] 应用的 [NestJS] 服务器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-4-%E7%AB%A0-react-%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 第 4 章 - [React] 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-5-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-react-%E5%AE%A2%E6%88%B7%E7%AB%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. 第 5 章 - [RdvMedecins] 应用的 [React] 客户端
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 第 6 章 - 结论与后续步骤
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E7%AC%AC-6-%E7%AB%A0-%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%90%8E%E7%BB%AD%E6%AD%A5%E9%AA%A4.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 第 6 章 - 结论与后续步骤
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-已构建的内容" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. 已构建的内容
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-不在范围内或有待移植的内容" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. 不在范围内或有待移植的内容
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. 不在范围内或有待移植的内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-法语英语本地化本文档已解决" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1. 法语/英语本地化——本文档已解决
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-客户端的调试模式有意排除在范围之外" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2. 客户端的“调试”模式——有意排除在范围之外
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723-人为网络延迟推迟" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3. 人为网络延迟——推迟
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-关于本文档所采用方法的说明" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. 关于本文档所采用方法的说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-立即上手" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. 立即上手
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-6-conclusion-et-etapes-suivantes" name="chapitre-6-conclusion-et-etapes-suivantes" class="odt-bookmark-anchor"></span></p>
+<h1 id="7-第-6-章---结论与后续步骤">7. <span style="color: #2e74b5">第 6 章 - 结论与后续步骤</span></h1>
+<p><span id="ce-qui-a-ete-construit" name="ce-qui-a-ete-construit" class="odt-bookmark-anchor"></span></p>
+<h2 id="71-已构建的内容">7.1. <span style="color: #2e74b5">已构建的内容</span></h2>
+<p>本文档把 [RdvMedecins] 应用的功能核心 <strong>和</strong> 身份验证从 2014 年的原文档改编到了当前技术上：</p>
+<ul>
+  <li>一个完整的 <b>[NestJS]</b> 服务器（<i><mark style="background-color: #fff5ce">[TypeORM]</mark></i> 实体、DAO、业务层、Web 层），在同一端口（8080）上公开与原 Spring 4 服务器相同的 11 个业务路由（JSON），现在全部由令牌（JWT）保护；
+  </li>
+  <li>一个 <b>身份验证</b>层（<i><mark style="background-color: #fff5ce">[@nestjs/passport] </mark></i>+ <i><mark style="background-color: #fff5ce">[@nestjs/jwt]</mark></i>）：登录名/密码身份验证（POST /login）、随每个后续请求提交的已签名令牌，以及在两个修改数据的路由上基于角色的访问控制（<i><mark style="background-color: #fff5ce">[@Roles]</mark></i>(&#x27;ADMIN&#x27;) + <i><mark style="background-color: #fff5ce">[RolesGuard]</mark></i>）；
+  </li>
+  <li>一个 <b>[React]</b> 客户端（函数组件、Hook），提供与原 AngularJS 1.x 客户端相同的功能——选择医生和日期、查看日程表、预约和取消预约——并增加了登录界面、持久会话（localStorage）、根据已登录用户的角色进行调整的 Bootstrap 界面（对特定角色隐藏预约按钮），以及在法语和英语之间切换界面的能力（<i><mark style="background-color: #fff5ce">[i18next] </mark></i>+ <i><mark style="background-color: #fff5ce">[react-i18next]</mark></i>）。
+  </li>
+</ul>
+
+<p>数据库的核心没有改变（相同的表 <em><mark style="background-color: #fff5ce">[doctors/clients/slots/appointments]</mark></em>，相同的约束），只是增加了表 <em><mark style="background-color: #fff5ce">[users]</mark></em>；总体的分层架构也没有改变——更新的只是实现它的工具。</p>
+<p>与原文档的身份验证方式有两处有意的差异，已在第 3 章中详细说明：使用 <strong>JWT</strong> 令牌，而不是每次请求都发送 HTTP Basic 请求头；以及每个用户使用单个 <em><mark style="background-color: #fff5ce">[role]</mark></em> 列，而不是跨三张表的多对多关系。第三处差异——这是功能上的差异——是本次移植有意选择的：角色 USER 现在可以查看日程表（只读），而在原文档中它只用来演示完全拒绝访问。</p>
+<p><span id="ce-qui-reste-hors-perimetre-ou-a-porter" name="ce-qui-reste-hors-perimetre-ou-a-porter" class="odt-bookmark-anchor"></span></p>
+<h2 id="72-不在范围内或有待移植的内容">7.2. <span style="color: #2e74b5">不在范围内或有待移植的内容</span></h2>
+<p>除上述内容之外，原文档还涵盖另外三个主题——其中一个现已解决，另一个被有意排除，第三个推迟到后续阶段：</p>
+<p><span id="linternationalisation-francaisanglais---traitee-dans-ce-document" name="linternationalisation-francaisanglais---traitee-dans-ce-document" class="odt-bookmark-anchor"></span></p>
+<h3 id="721-法语英语本地化本文档已解决">7.2.1. <span style="color: #1f4d78">法语/英语本地化——本文档已解决</span></h3>
+<p>原文档提出使用 <em><mark style="background-color: #fff5ce">[angular-translate]</mark></em> 库在法语和英语之间切换界面。本次移植使用当前 <em><mark style="background-color: #fff5ce">[React]</mark></em> 生态中的对应工具 <em><mark style="background-color: #fff5ce">[i18next] </mark></em>（连同 <em><mark style="background-color: #fff5ce">[react-i18next]</mark></em>，它通过 HTTP 从 <em><mark style="background-color: #fff5ce">[public/i18n/]</mark></em> 文件夹加载字典 fr.json/en.json）实现了这一功能——见第 5 章。与此前的 <em><mark style="background-color: #fff5ce">[angular-translate] </mark></em>一样，<em><mark style="background-color: #fff5ce">[i18next] </mark></em>允许您即时切换语言，而无需重新加载页面——这一行为忠实于原文档。</p>
+<p><span id="le-mode-debug-du-client---deliberement-hors-perimetre" name="le-mode-debug-du-client---deliberement-hors-perimetre" class="odt-bookmark-anchor"></span></p>
+<h3 id="722-客户端的调试模式有意排除在范围之外">7.2.2. <span style="color: #1f4d78">客户端的“调试”模式——有意排除在范围之外</span></h3>
+<p>原文档包含一个可从界面激活的技术显示模式，它可以访问当前视图的原始模型（AngularJS 1.x 的 $scope）——这在 2014 年是一个有用的功能，当时可用于检查 AngularJS 应用的开发工具还很有限。本次移植没有重现它：<strong>当前的 [React] 开发工具</strong>（<em><mark style="background-color: #fff5ce">[React] </mark></em>DevTools，官方浏览器扩展）现在可以在应用之外，对组件、它们的状态（Hook）和 props 提供比重新集成到界面中的自定义调试面板全面得多的检查。添加这样的面板，无异于创建一个已由生态提供的工具的简化版本——因此这一决定是最终的，而不仅仅是推迟。</p>
+<p><span id="un-delai-reseau-artificiel---reporte" name="un-delai-reseau-artificiel---reporte" class="odt-bookmark-anchor"></span></p>
+<h3 id="723-人为网络延迟推迟">7.2.3. <span style="color: #1f4d78">人为网络延迟——推迟</span></h3>
+<p>原文档允许在每次服务器响应之前设置人为延迟，以观察界面在慢速网络下的行为（加载指示器、临时禁用按钮等）。本次移植中尚没有与此功能对应的实现。</p>
+<p><span id="un-mot-sur-la-methode-suivie-dans-ce-document" name="un-mot-sur-la-methode-suivie-dans-ce-document" class="odt-bookmark-anchor"></span></p>
+<h2 id="73-关于本文档所采用方法的说明">7.3. <span style="color: #2e74b5">关于本文档所采用方法的说明</span></h2>
+<p>本文档完全基于实际执行过的代码编写：每条服务器路径都经过测试（包括身份验证场景：登录成功/失败、不带令牌访问、使用错误角色访问），第 5 章中的每张客户端截图都是通过与实际运行的应用交互获得的——使用由程序自动控制的 Chromium 浏览器，数据来自所提供 SQL 脚本中的演示数据。这种方法还在准备本文档期间发现了一个关于 <em><mark style="background-color: #fff5ce">[TypeORM] </mark></em>与计算列（<em><mark style="background-color: #fff5ce">[@RelationId]</mark></em>）一起使用的具体问题——该问题已在第 3 章中报告并修正，直接体现在交付的代码中。这一要求也解释了为什么本文档不包含 Postman 截图：与其模拟它们，似乎更好的做法是把这一步留给文档作者，他可以直接在自己的工作站上创建它们。</p>
+<p><span id="pour-aller-plus-loin-des-maintenant" name="pour-aller-plus-loin-des-maintenant" class="odt-bookmark-anchor"></span></p>
+<h2 id="74-立即上手">7.4. <span style="color: #2e74b5">立即上手</span></h2>
+<p>在等待本次移植的后续步骤期间，本文档附带的服务器和客户端为您提供了一个现成可用的基础，供您自行试验：</p>
+<ul>
+  <li>添加新的医生或新的患者（目前只能通过修改 SQL 脚本来完成——一个名为 /addDoctor 的路由，同样受 <i><mark style="background-color: #fff5ce">[@Roles]</mark></i>(&#x27;ADMIN&#x27;) 保护，可以作为一个很好的第一个练习）；
+  </li>
+  <li>添加第三个角色，或拥有多个角色的用户——借此机会以非常具体的方式评估放弃单列简化方案 <i><mark style="background-color: #fff5ce">[role] </mark></i>的代价（见第 3 章）；
+  </li>
+  <li>修改客户端的呈现（颜色、布局）而不改动服务器——这是验证客户端分层架构按预期工作的好办法；
+  </li>
+  <li>查阅所交付的服务器和客户端中每个文件夹的 README 文件：每个文件都在其上下文中解释了其所含文件的作用。
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本教程由 Anthropic 的 AI <strong>Claude</strong> 编写，并经 <strong>Serge Tahé</strong> 审阅，根据
+        <em>知识共享署名 – 禁止商业使用 –
+        共享 3.0 未本地化版</em>的条款向公众开放。
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

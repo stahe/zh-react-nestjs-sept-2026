@@ -1,0 +1,1173 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="React/NestJS 客户端/服务器示例">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-react-nestjs-sept-2026/%E7%AC%AC-1-%E7%AB%A0-%E6%90%AD%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83.html">
+      
+      
+        <link rel="prev" href="%E7%AE%80%E4%BB%8B.html">
+      
+      
+        <link rel="next" href="%E7%AC%AC-2-%E7%AB%A0-nestjs-%E7%AE%80%E4%BB%8B.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. 第 1 章 - 搭建工作环境 - React/NestJS 客户端/服务器示例</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "React/NestJS 客户端/服务器示例";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-第-1-章---搭建工作环境" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="React/NestJS 客户端/服务器示例" class="md-header__button md-logo" aria-label="React/NestJS 客户端/服务器示例" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            React/NestJS 客户端/服务器示例
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. 第 1 章 - 搭建工作环境
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-react-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="React/NestJS 客户端/服务器示例" class="md-nav__button md-logo" aria-label="React/NestJS 客户端/服务器示例" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    React/NestJS 客户端/服务器示例
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-react-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 第 1 章 - 搭建工作环境
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E7%AC%AC-1-%E7%AB%A0-%E6%90%AD%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 第 1 章 - 搭建工作环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-安装工具" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. 安装工具
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-创建数据库" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. 创建数据库
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-首次启动-nestjs-服务器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. 首次启动 [NestJS] 服务器
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-用浏览器测试服务器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. 用浏览器测试服务器
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-用-postman-测试-nestjs-服务器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. 用 Postman 测试 [NestJS] 服务器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. 用 Postman 测试 [NestJS] 服务器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-登录并获取令牌" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.1. 登录并获取令牌
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-携带令牌调用受保护的路由" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.2. 携带令牌调用受保护的路由
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-测试-post-路由addappointmentdeleteappointment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.3. 测试 POST 路由（/addAppointment、/deleteAppointment）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-首次启动-react-客户端" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. 首次启动 [React] 客户端
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-2-%E7%AB%A0-nestjs-%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. 第 2 章 - [NestJS] 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-3-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-nestjs-%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 第 3 章 - [RdvMedecins] 应用的 [NestJS] 服务器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-4-%E7%AB%A0-react-%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 第 4 章 - [React] 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-5-%E7%AB%A0-rdvmedecins-%E5%BA%94%E7%94%A8%E7%9A%84-react-%E5%AE%A2%E6%88%B7%E7%AB%AF.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. 第 5 章 - [RdvMedecins] 应用的 [React] 客户端
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AC%AC-6-%E7%AB%A0-%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%90%8E%E7%BB%AD%E6%AD%A5%E9%AA%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 第 6 章 - 结论与后续步骤
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-1-mise-en-place-de-lenvironnement-de-travail" name="chapitre-1-mise-en-place-de-lenvironnement-de-travail" class="odt-bookmark-anchor"></span></p>
+<h1 id="2-第-1-章---搭建工作环境">2. <span style="color: #2e74b5">第 1 章 - 搭建工作环境</span></h1>
+<p><span id="installer-les-outils" name="installer-les-outils" class="odt-bookmark-anchor"></span></p>
+<h2 id="21-安装工具">2.1. <span style="color: #2e74b5">安装工具</span></h2>
+<ol>
+  <li><b>Node.js</b>：从 <a href="https://nodejs.org/"><u><span style="color: #0563c1">nodejs.org</span></u></a>下载并安装 22 版本（或更高版本）。在终端中验证安装：
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>node --version
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>npm --version
+</code></pre></div></td></tr></table></div>
+
+  </li>
+</ol>
+
+<ol>
+  <li><b>Visual Studio Code </b>（VSCode）：可从 <a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">code.visualstudio.com</span></u></a>免费下载。安装“TypeScript and JavaScript Language Features”扩展（通常已内置）。
+  </li>
+  <li><b>[NestJS] CLI</b>，一次安装，永久使用（在客户端，<b>[Vite] </b>无需任何全局安装——见简介）。在 VSCode 终端中：
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-8" name="__codelineno-1-8"></a>npm install -g @nestjs/cli
+</code></pre></div></td></tr></table></div>
+
+  </li>
+</ol>
+
+<ol>
+  <li><b>[MySQL] 8</b>：例如通过 <a href="https://www.apachefriends.org/"><u><span style="color: #0563c1">XAMPP</span></u></a>、<a href="https://laragon.org/"><u><span style="color: #0563c1">Laragon</span></u></a>（在 Windows 上）安装，或直接通过 <a href="https://dev.mysql.com/downloads/mysql/"><u><span style="color: #0563c1">[MySQL] Community Server</span></u></a>安装。图形化管理工具（phpMyAdmin、<i><mark style="background-color: #fff5ce">[MySQL] </mark></i>Workbench、DBeaver、HeidiSQL……）可以简化操作。后文使用的是 Laragon 工具。
+  </li>
+  <li><b>Postman</b>：可从 <a href="https://www.postman.com/downloads/"><u><span style="color: #0563c1">postman.com</span></u></a>免费下载。
+  </li>
+</ol>
+
+<p>如果您已下载代码，它位于两个文件夹中：</p>
+<p><img src="images/10000000000001C00000012F59BD022B.png" width="188" height="127" style="width:4.979cm;height:3.348cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C00000012F59BD022B.png" /></p>
+<ul>
+  <li>在 [1] 中，客户端是 <i><mark style="background-color: #fff5ce">[React]</mark></i>；
+  </li>
+  <li>在 [2] 中，服务器是 <i><mark style="background-color: #fff5ce">[NestJS]</mark></i>；
+  </li>
+</ul>
+
+<p>用 Visual Studio <em><mark style="background-color: #fff5ce">[File / Open Folder]</mark></em>打开 [2] 文件夹：</p>
+<p><img src="images/10000000000002530000028174CA6D63.png" width="298" height="321" style="width:7.872cm;height:8.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002530000028174CA6D63.png" /></p>
+<p><span id="creer-la-base-de-donnees" name="creer-la-base-de-donnees" class="odt-bookmark-anchor"></span></p>
+<h2 id="22-创建数据库">2.2. <span style="color: #2e74b5">创建数据库</span></h2>
+<p>为了创建 [NestJS] 服务器使用的 [MySQL] 数据库，我们将使用 Laragon 工具。截至 2026 年 9 月，Laragon 可从 URL [Download Laragon – Fast &amp; Modern Dev Environment ] 获取。Laragon 包含可用于安装 PHP 服务器和 [MySQL] DBMS 服务器的工具：</p>
+<p><img src="images/10000000000006440000030C86481A8B.png" width="643" height="312" style="width:17cm;height:8.266cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006440000030C86481A8B.png" /></p>
+<ul>
+  <li>在 [1] 中，是 Apache Web 服务器；
+  </li>
+  <li>在 [2] 中，是 [MySQL] DBMS；
+  </li>
+  <li>在 [3] 中，是一个我们不会使用的邮件工具；
+  </li>
+  <li>[4] 启动所有服务（Apache、<i><mark style="background-color: #fff5ce">[MySQL]</mark></i>、MailPit）；
+  </li>
+  <li>[5] 显示 URL [http://localhost] 对应的网页。默认情况下，该 URL 指向 &lt;laragon-install&gt;\www 文件夹，其中 &lt;laragon-install&gt; 是 Laragon 的安装文件夹；
+  </li>
+  <li>在 [6] 中，启动 HeidiSQL 工具，它可以管理 MySQL 数据库。我们将用这个工具创建 [NestJS] 服务器使用的数据库；
+  </li>
+  <li>在 [7] 中，打开一个终端；Laragon 所需的所有二进制文件都在 PATH 中；
+  </li>
+  <li>在 [8] 中，打开一个 Windows 资源管理器窗口，定位到与 URL [http://localhost] 关联的文件夹；
+  </li>
+</ul>
+
+<p>Laragon 安装文件夹包含以下内容：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002DB00000324CA05B23E.png" width="314" height="345" style="display:inline-block; margin:4px;width:8.306cm;height:9.133cm;" class="odt-zoomable" data-zoom-src="images/10000000000002DB00000324CA05B23E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>在 [1] 中，<i><mark style="background-color: #fff5ce">[bin]</mark></i> 文件夹包含许多应用程序：
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000329000004CE02139058.png" width="404" height="615" style="display:inline-block; margin:4px;width:10.7cm;height:16.27cm;" class="odt-zoomable" data-zoom-src="images/1000000000000329000004CE02139058.png" /></td></tr></table>
+
+<ul>
+  <li>在 [1] 中，是 Apache Web 服务器；
+  </li>
+  <li>在 [2] 中，是命令行终端；
+  </li>
+  <li>在 [3] 中，是 <i><mark style="background-color: #fff5ce">[git]</mark></i> 客户端，可用于管理项目的不同版本；
+  </li>
+  <li>在 [4] 中，是数据库管理器；
+  </li>
+  <li>[5]，邮件管理器；
+  </li>
+  <li>在 [6] 中，是 [MySQL] DBMS；
+  </li>
+  <li>[7]，另一个 Web 服务器；
+  </li>
+  <li>在 [8] 中，是 <i><mark style="background-color: #fff5ce">[node.js] </mark></i>，用于运行 JavaScript 脚本；
+  </li>
+  <li>[9]，文本编辑器；
+  </li>
+  <li>[10]，PHP 解释器；
+  </li>
+  <li>[11]，<i><mark style="background-color: #fff5ce">[Python]</mark></i> 解释器；
+  </li>
+  <li>[12]，缓存服务器；
+  </li>
+</ul>
+
+<p>Laragon 自带完整的开发环境。在本课程中，我们只使用 [MySQL] DBMS [6] 和 [heidisql]<em><mark style="background-color: #fff5ce"> </mark></em>以图形方式管理它；</p>
+<p>要创建 <em><mark style="background-color: #fff5ce">[MySQL]</mark></em> 数据库，供 <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> 服务器使用，请按以下步骤操作：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006440000030C352A3F89.png" width="503" height="244" style="display:inline-block; margin:4px;width:13.301cm;height:6.468cm;" class="odt-zoomable" data-zoom-src="images/10000000000006440000030C352A3F89.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>在 [1] 中，必须启动所有服务；
+  </li>
+  <li>在 [2] 中，<i><mark style="background-color: #fff5ce">[Database]</mark></i> 选项可用于管理数据库；
+  </li>
+</ul>
+
+<p>选项 <em><mark style="background-color: #fff5ce">[Database] </mark></em>会启动名为 HeidiSQL 的实用工具：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000008D2000003C91FBD37B4.png" width="621" height="266" style="display:inline-block; margin:4px;width:16.431cm;height:7.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000008D2000003C91FBD37B4.png" /></td></tr></table>
+
+<ul>
+  <li>在 [1] 中，可以选择各种 DBMS 选项。默认值为 MySQL，这是可以接受的；
+  </li>
+  <li>在 [2] 中，登录 HeidiSQL；
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003FD0000018A35CBA47C.png" width="357" height="138" style="display:inline-block; margin:4px;width:9.449cm;height:3.649cm;" class="odt-zoomable" data-zoom-src="images/10000000000003FD0000018A35CBA47C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002A4000001C70316A390.png" width="237" height="159" style="display:inline-block; margin:4px;width:6.26cm;height:4.21cm;" class="odt-zoomable" data-zoom-src="images/10000000000002A4000001C70316A390.png" /></td></tr></table>
+
+<ul>
+  <li>在 [1-2] 中，运行 SQL 文件，然后选择 <i><mark style="background-color: #fff5ce">[dbrdvmedecins.sql]</mark></i> 文件，您可以在 <i><mark style="background-color: #fff5ce">[rdvmedecins-nestjs-server/database]</mark></i> 文件夹中找到它：
+  </li>
+</ul>
+
+<p><img src="images/10000000000001CA000002F2946B0D5A.png" width="198" height="324" style="width:5.226cm;height:8.58cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CA000002F2946B0D5A.png" /></p>
+<p>运行 [3] 文件将创建 <em><mark style="background-color: #fff5ce">[dbrdvmedecins]</mark></em> 数据库，供 <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> 服务器使用。要查看它，请在 HeidiSQL 中按 F5 刷新显示：</p>
+<p><img src="images/10000000000002A50000031EFB250513.png" width="213" height="250" style="width:5.639cm;height:6.609cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A50000031EFB250513.png" /></p>
+<p>数据库 <em><mark style="background-color: #fff5ce">[dbrdvmedecins] </mark></em>已创建。您可以查看其内容：</p>
+<p><img src="images/100000000000053F00000271DC17B512.png" width="602" height="280" style="width:15.921cm;height:7.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000053F00000271DC17B512.png" /></p>
+<ul>
+  <li>在 [1-3] 中，是表 <i><mark style="background-color: #fff5ce">[clients]</mark></i>；
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id] </mark></i>是表的主键；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[version] </mark></i>是行的版本号。每次修改该行，此编号都会递增；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[title, last_name, first_name] </mark></i>用于标识个人；
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/100000000000052A0000026BD3179386.png" width="602" height="282" style="width:15.921cm;height:7.454cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052A0000026BD3179386.png" /></p>
+<ul>
+  <li>在 [1-3] 中，是表 <i><mark style="background-color: #fff5ce">[doctors]</mark></i>；
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id] </mark></i>是表的主键；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[version] </mark></i>是行的版本号；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[title, last_name, first_name] </mark></i>用于标识个人；
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/10000000000005FE000002C6FB6943F4.png" width="602" height="278" style="width:15.921cm;height:7.368cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005FE000002C6FB6943F4.png" /></p>
+<ul>
+  <li>在 [1-3] 中，是医生预约时间段表 [slots]：
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id]</mark></i>：主键；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[version]</mark></i>：行版本号；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[doctor_id]</mark></i>：外键，引用医生的主键；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[start_hour, start_minute]</mark></i>：预约开始时间的小时和分钟。因此，<i><mark style="background-color: #fff5ce">[8,20] </mark></i>表示上午 8:20。
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[end_hour, end_minute]</mark></i>：问诊结束时间的小时和分钟。
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/10000000000005EB0000024E23D6EF19.png" width="602" height="234" style="width:15.921cm;height:6.198cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005EB0000024E23D6EF19.png" /></p>
+<ul>
+  <li>在 [1-3] 中，是已安排预约的 <i><mark style="background-color: #fff5ce">[appointments]</mark></i> 表；
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id]</mark></i>：主键；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[version]</mark></i>：版本号；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[day]</mark></i>：预约日期；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[slot_id]</mark></i>：外键，引用预约时间段的主键。由于时间段与医生相关联，因此可以知道是哪位医生负责这次预约；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[client_id]</mark></i>：外键，指向前来就诊的患者的编号（主键）；
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/100000000000066300000266A61EA136.png" width="602" height="226" style="width:15.921cm;height:5.978cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066300000266A61EA136.png" /></p>
+<ul>
+  <li>在 [1-3] 中，表 <i><mark style="background-color: #fff5ce">[users] </mark></i>列出了获准使用 <i><mark style="background-color: #fff5ce">[NestJS]</mark></i> 应用的用户；
+    <ul>
+      <li><i><mark style="background-color: #fff5ce">[id, version]</mark></i>：主键、版本号；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[login, password]</mark></i>：用户凭据；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[name]</mark></i>：用户名称；
+      </li>
+      <li><i><mark style="background-color: #fff5ce">[role]</mark></i>：用户的角色。<i><mark style="background-color: #fff5ce">[ADMIN] </mark></i>拥有完全访问权限。<i><mark style="background-color: #fff5ce">[USER] </mark></i>拥有只读访问权限。该用户可以查看医生的日程，但不能安排或取消预约；
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span id="lancer-le-serveur-nestjs-pour-la-premiere-fois" name="lancer-le-serveur-nestjs-pour-la-premiere-fois" class="odt-bookmark-anchor"></span></p>
+<h2 id="23-首次启动-nestjs-服务器">2.3. <span style="color: #2e74b5">首次启动 [NestJS] 服务器</span></h2>
+<p>在 <em><mark style="background-color: #fff5ce">[rdvmedecins-nestjs-server]</mark></em> 文件夹中，在终端里输入以下命令：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>npm install
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>cp .env.example .env
+</code></pre></div></td></tr></table></div>
+<p>文件 <em><mark style="background-color: #fff5ce">[.env]</mark></em> 用于设置环境变量：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># 示例配置文件。</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># 将此文件复制为 [.env]，然后根据您的机器调整其中的值。</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># [.env] 文件绝不能共享或提交（其中包含密码）。</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1"># NestJS 服务器的监听端口（原 Spring 服务器监听 8080）</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="na">PORT</span><span class="o">=</span><span class="s">8080</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1"># MySQL 数据库 [dbrdvmedecins] 的连接参数</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="na">DB_HOST</span><span class="o">=</span><span class="s">localhost</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="na">DB_PORT</span><span class="o">=</span><span class="s">3306</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="na">DB_USERNAME</span><span class="o">=</span><span class="s">root</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="na">DB_PASSWORD</span><span class="o">=</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="na">DB_DATABASE</span><span class="o">=</span><span class="s">dbrdvmedecins</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># 仅用于开发：TypeORM 可以根据实体自动创建/更新</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="c1"># 表。这里将其禁用，因为我们像原 Spring 项目一样，提供了</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="c1"># 自己的 SQL 脚本 [database/dbrdvmedecins.sql]。</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="na">DB_SYNCHRONIZE</span><span class="o">=</span><span class="s">false</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1"># 身份验证（见 src/auth/）</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="c1"># 用于签名/验证 JWT 令牌的密钥 - 必须修改</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="c1"># 在生产环境中使用（长的随机字符串，绝不提交）。</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="na">JWT_SECRET</span><span class="o">=</span><span class="s">change-me-to-a-long-random-string</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="c1"># JWT 令牌的有效期（见 [ms] 库的文档：</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="c1"># "60"、"2h"、"7d"……）</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="na">JWT_EXPIRES_IN</span><span class="o">=</span><span class="s">2h</span>
+</code></pre></div></td></tr></table></div>
+<p>请根据您的 <em><mark style="background-color: #fff5ce">[.env] </mark></em>安装情况定制新创建的文件 <em><mark style="background-color: #fff5ce">[MySQL]</mark></em>（用户名、密码、端口）。由于已加入身份验证（见第 3 章），该文件还包含一个名为 JWT_SECRET 的键：示例值适合跟随本文档学习，但在任何实际使用之前，必须替换为您自己的唯一随机字符串。</p>
+<p>启动所有 Laragon 服务 <em><mark style="background-color: #fff5ce">[Start All]</mark></em>，如果您尚未启动的话。</p>
+<p>然后启动服务器：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>npm run start:dev
+</code></pre></div></td></tr></table></div>
+<p>控制台依次显示：<em><mark style="background-color: #fff5ce">[NestJS]</mark></em> 模块的启动、控制器公开的路由列表，然后是启动确认信息：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>[Nest] RoutesResolver RdvMedecinsController {/}:
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>[Nest] RouterExplorer Mapped {/getAllDoctors, GET} route
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>[Nest] RouterExplorer Mapped {/getAllClients, GET} route
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>[Nest] RouterExplorer Mapped {/getAllSlots/:doctorId, GET} route
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>[Nest] RouterExplorer Mapped {/getDoctorAppointmentsOfDay/:doctorId/:day, GET} route
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>[Nest] RouterExplorer Mapped {/getDoctorScheduleOfDay/:doctorId/:day, GET} route
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>[Nest] RouterExplorer Mapped {/getDoctorById/:id, GET} route
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>[Nest] RouterExplorer Mapped {/getClientById/:id, GET} route
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>[Nest] RouterExplorer Mapped {/getSlotById/:id, GET} route
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>[Nest] RouterExplorer Mapped {/getAppointmentById/:id, GET} route
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>[Nest] RouterExplorer Mapped {/addAppointment, POST} route
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>[Nest] RouterExplorer Mapped {/deleteAppointment, POST} route
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>[Nest] RoutesResolver AuthController {/}:
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>[Nest] RouterExplorer Mapped {/login, POST} route
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>[Nest] NestApplication Nest application successfully started
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>[RdvMedecins] NestJS server started on http://localhost:8080
+</code></pre></div></td></tr></table></div>
+<p>该控制台输出确认服务器确实在监听 8080 端口——<strong>与原文档中的 Spring Boot 服务器端口完全相同</strong>，这是出于这个原因而特意选择的。</p>
+<p><span id="tester-le-serveur-avec-un-navigateur" name="tester-le-serveur-avec-un-navigateur" class="odt-bookmark-anchor"></span></p>
+<h2 id="24-用浏览器测试服务器">2.4. <span style="color: #2e74b5">用浏览器测试服务器</span></h2>
+<p>由于已加入身份验证（第 3 章），<strong>[RdvMedecinsController]</strong> 中的<em><mark style="background-color: #fff5ce">所有路由</mark></em>都需要有效的 JWT 令牌：因此，不能再单独使用浏览器直接测试它们。例如：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>http://localhost:[8080/getAllDoctors]
+</code></pre></div></td></tr></table></div>
+<p>现在在没有令牌的情况下会返回 401 Unauthorized 错误：</p>
+<p><img src="images/100000000000048A000001AAB838806D.png" width="581" height="213" style="width:15.372cm;height:5.636cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048A000001AAB838806D.png" /></p>
+<p>这是预期的行为：该响应确认服务器正在正确地保护其路由。需要使用 Postman（下一节）来获取令牌并使用它。</p>
+<p><span id="tester-le-serveur-avec-postman" name="tester-le-serveur-avec-postman" class="odt-bookmark-anchor"></span></p>
+<h2 id="25-用-postman-测试-nestjs-服务器">2.5. <span style="color: #2e74b5">用 Postman 测试 [NestJS] 服务器</span></h2>
+<p>Postman 工具可从 URL <em><mark style="background-color: #fff5ce">[https://www.postman.com/downloads/]</mark></em> 获取。您可能需要创建一个账户。</p>
+<p>启动所有 Laragon 服务，然后打开 Postman 桌面应用：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002DD000001CDECEE907C.png" width="294" height="184" style="display:inline-block; margin:4px;width:7.766cm;height:4.881cm;" class="odt-zoomable" data-zoom-src="images/10000000000002DD000001CDECEE907C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000020D0000014C25D78584.png" width="263" height="166" style="display:inline-block; margin:4px;width:6.946cm;height:4.392cm;" class="odt-zoomable" data-zoom-src="images/100000000000020D0000014C25D78584.png" /></td></tr></table>
+
+<ul>
+  <li>在 [1-2] 中，创建一个 HTTP 请求，用于查询医生预约管理服务器；
+  </li>
+</ul>
+
+<p><span id="se-connecter-et-obtenir-un-jeton" name="se-connecter-et-obtenir-un-jeton" class="odt-bookmark-anchor"></span></p>
+<h3 id="251-登录并获取令牌">2.5.1. <span style="color: #1f4d78">登录并获取令牌</span></h3>
+<ol>
+  <li>创建一个新的 Postman 请求，方法为 <b>POST</b>，URL 为 http<mark style="background-color: #fff5ce">://localhost:8080/login</mark>；
+  </li>
+  <li>在 <b>[Body]</b> 选项卡中，选择“<b>raw</b>”，然后选择 <b>JSON</b> 格式，并输入：{<mark style="background-color: #fff5ce">&quot;login&quot;: &quot;admin&quot;, &quot;password&quot;: &quot;admin&quot;</mark>}（或使用 &quot;user/user&quot; 来测试 USER 角色）；
+  </li>
+  <li>提交请求。
+  </li>
+</ol>
+
+<p><img src="images/100000000000057C000004484B69727F.png" width="602" height="470" style="width:15.921cm;height:12.427cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000057C000004484B69727F.png" /></p>
+<ul>
+  <li>在 [1-2] 中，是发往运行在 8080 端口的 <i><mark style="background-color: #fff5ce">[NestJS] </mark></i>服务器的 POST 请求；
+  </li>
+  <li>在 [3-5] 中，是请求体。它向服务器传送一个 JSON 字符串，其中包含尝试登录的用户的凭据，这里是 admin/admin；
+  </li>
+  <li>在 [6] 中，是服务器的响应；
+  </li>
+  <li>在 [7] 中，是身份验证令牌，后续请求必须把它发送给服务器，以表明“我已经通过身份验证”；
+  </li>
+</ul>
+
+<p>复制 accessToken 的值：这就是您现在必须在每个后续请求中携带的令牌。在上面的示例中，要复制的令牌是“eyJ...zoM”（不含引号）。</p>
+<p><span id="appeler-une-route-protegee-avec-le-jeton" name="appeler-une-route-protegee-avec-le-jeton" class="odt-bookmark-anchor"></span></p>
+<h3 id="252-携带令牌调用受保护的路由">2.5.2. <span style="color: #1f4d78">携带令牌调用受保护的路由</span></h3>
+<p>对于 <mark style="background-color: #fff5ce">GET /getAllDoctors </mark>（或任何其他以 RdvMedecinsController 开头的路由），在 Postman 的 <strong>Authorization</strong> 选项卡中，选择 <strong>Bearer Token</strong> 类型，并粘贴上面复制的令牌（Postman 随后会自动添加 Authorization: Bearer &lt;token&gt; 请求头）。</p>
+<p><img src="images/10000000000005590000054A64AFF51E.png" width="602" height="595" style="width:15.921cm;height:15.744cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005590000054A64AFF51E.png" /></p>
+<ul>
+  <li>在 [1-2] 中，是发送给服务器的请求。它请求数据库中的医生列表；
+  </li>
+  <li>在 [3-5] 中，请求必须发送身份验证令牌。在 [4] 中，选择 <i><mark style="background-color: #fff5ce">[Bearer Token]，</mark></i>并在 [5] 中粘贴您之前复制的身份验证令牌；
+  </li>
+  <li>在 [7] 中，是服务器的响应；
+  </li>
+</ul>
+
+<p><span id="tester-les-routes-post-ajouterrv-supprimerrv" name="tester-les-routes-post-ajouterrv-supprimerrv" class="odt-bookmark-anchor"></span></p>
+<h3 id="253-测试-post-路由addappointmentdeleteappointment">2.5.3. <span style="color: #1f4d78">测试 POST 路由（/addAppointment、/deleteAppointment）</span></h3>
+<p>按照上面相同的步骤操作（方法 POST、JSON 请求体、Bearer Token），就像原文档对相同的路由使用 Chrome 扩展“Advanced Rest [Client]”一样。</p>
+<p><strong>注</strong>：您可以在 <em><mark style="background-color: #fff5ce">[rdvmedecins-nestJS.postman_collection.json]</mark></em> 集合中找到以下 Postman 请求：</p>
+<p><img src="images/100000000000029C0000030B2B251723.png" width="334" height="390" style="width:8.837cm;height:10.306cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029C0000030B2B251723.png" /></p>
+<p>在 Postman 中，按 Ctrl-0 加载集合：</p>
+<p><img src="images/10000000000005F4000002A81D1A727B.png" width="602" height="268" style="width:15.921cm;height:7.103cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005F4000002A81D1A727B.png" /></p>
+<ul>
+  <li>点击 [1] 加载集合并选择集合文件。集合加载完成后，会显示其中的请求：
+  </li>
+</ul>
+
+<p><img src="images/10000000000003FC00000334CABD0B35.png" width="510" height="410" style="width:13.494cm;height:10.848cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003FC00000334CABD0B35.png" /></p>
+<p>要使用 <mark style="background-color: #fff5ce">ADMIN </mark>账户的令牌<strong>测试 /addAppointment</strong>：</p>
+<ol>
+  <li>Postman 请求，方法 <b>POST</b>，URL 为 http://localhost:8080/addAppointment；
+  </li>
+  <li><b>Authorization</b> 选项卡：Bearer Token，admin 令牌；
+  </li>
+  <li><b>[Body]</b> 选项卡，raw，JSON：{&quot;day&quot;: &quot;2026-09-13&quot;, &quot;clientId&quot;: 1, &quot;slotId&quot;: 5}；
+  </li>
+  <li>提交请求。
+  </li>
+</ol>
+
+<p><img src="images/100000000000058A00000529ABEBAFF4.png" width="602" height="561" style="width:15.921cm;height:14.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058A00000529ABEBAFF4.png" /></p>
+<p>您可以用 HeidiSQL 验证数据库中已添加了一条预约：</p>
+<p><img src="images/10000000000006A400000266AF435029.png" width="602" height="218" style="width:15.921cm;height:5.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006A400000266AF435029.png" /></p>
+<p>要测试 <mark style="background-color: #fff5ce">/deleteAppointment</mark>，按相同的步骤操作，请求体为 {&quot;appointmentId&quot;: 2}（即上面 (8) 中要取消的预约的 ID）。</p>
+<p><img src="images/100000000000058D0000034C0DB83F3D.png" width="602" height="357" style="width:15.921cm;height:9.454cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058D0000034C0DB83F3D.png" /></p>
+<ul>
+  <li>在 [4] 中，上面的编号是要删除的预约；
+  </li>
+</ul>
+
+<p><img src="images/10000000000005B2000003C2245B59CC.png" width="602" height="397" style="width:15.921cm;height:10.504cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B2000003C2245B59CC.png" /></p>
+<ul>
+  <li>在 [5-7] 中，是身份验证令牌；
+  </li>
+  <li>在 [9] 中，是服务器的响应。<i><mark style="background-color: #fff5ce">[status=0] </mark></i>表示操作成功。您可以用 HeidiSQL 验证：
+  </li>
+</ul>
+
+<p><img src="images/100000000000058D000002644C63689A.png" width="602" height="259" style="width:15.921cm;height:6.856cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058D000002644C63689A.png" /></p>
+<ul>
+  <li>在 [3] 中，2 号预约已不存在；
+  </li>
+</ul>
+
+<p><strong>试一试</strong>：使用 <strong>USER</strong> 账户（user/user）的令牌代替 admin 令牌，重复相同的 /addAppointment 请求：响应将变为 403 Forbidden，并带有消息“角色 [USER] 不允许执行此操作（所需角色：ADMIN）”——这具体演示了第 3 章中实现的基于角色的访问控制。</p>
+<p><span id="lancer-le-client-react-pour-la-premiere-fois" name="lancer-le-client-react-pour-la-premiere-fois" class="odt-bookmark-anchor"></span></p>
+<h2 id="26-首次启动-react-客户端">2.6. <span style="color: #2e74b5">首次启动 [React] 客户端</span></h2>
+<p>在 rdvmedecins-react-client 文件夹中（必须事先启动 <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> 服务器）：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>npm install
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>npm start
+</code></pre></div></td></tr></table></div>
+<p>然后在浏览器中打开<mark style="background-color: #fff5ce"> http://localhost:4200 </mark>：首先出现的是登录界面（见第 5 章）。</p>
+<p><img src="images/100000000000044C000003B6042ED554.png" width="359" height="310" style="width:9.5cm;height:8.2cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000044C000003B6042ED554.png" /></p>
+<ul>
+  <li>在 [1] 中，是提供 <i><mark style="background-color: #fff5ce">[React]</mark></i> 应用的服务器的 URL；
+  </li>
+  <li>在 [2] 中，是管理数据库 [dbrdvmedecins] 的 <i><mark style="background-color: #fff5ce">[NestJS] </mark></i>服务器的 URL；
+  </li>
+</ul>
+
+<p>必须理解，这里有两个 Web 服务器，其中一个充当另一个的客户端。</p>
+<p>右上角标有“FR”和“EN”的两个按钮可以将界面切换为法语（默认显示英语，如果浏览器设置为法语则显示法语），登录前也可以切换。使用两个演示账户之一登录（admin/admin 拥有完全访问权限，user/user 为只读），即可访问应用的其余部分。第 5 章详细介绍了该客户端的使用方法，每个步骤都配有截图。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本教程由 Anthropic 的 AI <strong>Claude</strong> 编写，并经 <strong>Serge Tahé</strong> 审阅，根据
+        <em>知识共享署名 – 禁止商业使用 –
+        共享 3.0 未本地化版</em>的条款向公众开放。
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
